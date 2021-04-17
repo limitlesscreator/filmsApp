@@ -2,7 +2,9 @@ import React from "react";
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import Movie from "./Movie";
+import "./App.css"
 
+// My First Project of ClassComponent (04,17,2021)  :)
 
 class App extends React.Component {
 
@@ -24,8 +26,9 @@ class App extends React.Component {
     render() {
         const {isLoading, movies} = this.state
         return (
+
             <section className={"container"}>{isLoading ?
-                <div className={'loader'}><span className={'loader_text'}>Загрузка...</span>
+                <div className={'loader'}><span className={'loader_text'}>Loading... <br/>here is only one page :)</span>
                 </div> : movies.map(movie => {
                     console.log(movies);
                     return (
@@ -41,8 +44,8 @@ class App extends React.Component {
                         </div>
 
                     )
-                })} </section>)
-
+                })}
+            </section>)
     }
 }
 

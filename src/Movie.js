@@ -4,17 +4,17 @@ import "./Movie.css"
 
 function Movie({id, year, title, summary, poster,genres}) {
     return <div className={'movie'}>
-        <img src={poster} alt={title} title={title}/>
+        <img className={'imgMovie'} src={poster} alt={title} title={title}/>
         <div className="movieColumn">
             <h3 className="movieTitle">{title}</h3>
+            <hr className={'hrTitle'}/>
             <h5 className="movieYear">{year}</h5>
-            <p className="movieSummary">{summary}</p>
+            <p className="movieSummary">{summary ? summary.slice(0,140)+"..." : 'Empty' }</p>
             <ul className="genres">
                 {genres.map((genre,index) => {
                     return <li key={index} className={'genre'}>{genre}</li>
                 })}
             </ul>
-            <hr/>
         </div>
     </div>
 }
